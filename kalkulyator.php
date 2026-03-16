@@ -45,14 +45,8 @@
         /* Сетка блоков */
         .calc-hub__grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 24px;
-        }
-
-        @media (max-width: 1024px) {
-            .calc-hub__grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
         @media (max-width: 600px) {
@@ -151,40 +145,6 @@
             background: #c96b22;
         }
 
-        /* Акцентная карточка (главный калькулятор) */
-        .calc-card--featured {
-            grid-column: span 2;
-            flex-direction: row;
-            align-items: center;
-            gap: 28px;
-            background: linear-gradient(135deg, #fff 60%, #FFF4EC 100%);
-        }
-
-        @media (max-width: 600px) {
-            .calc-card--featured {
-                grid-column: span 1;
-                flex-direction: column;
-            }
-        }
-
-        .calc-card--featured .calc-card__icon {
-            width: 72px;
-            height: 72px;
-            flex-shrink: 0;
-        }
-
-        .calc-card--featured .calc-card__icon svg {
-            width: 36px;
-            height: 36px;
-        }
-
-        .calc-card--featured .calc-card__title {
-            font-size: 20px;
-        }
-
-        .calc-card--featured .calc-card__desc {
-            font-size: 15px;
-        }
     </style>
 </head>
 <body class="simple">
@@ -302,136 +262,28 @@
 
         <div class="calc-hub__grid">
 
-            <!-- Главный калькулятор -->
-            <a href="https://s-troya.com/kalkulyator/dom/" class="calc-card calc-card--featured">
+            <!-- Брусовый дом -->
+            <a href="https://s-troya.com/kalkulyator/brus/" class="calc-card">
                 <div class="calc-card__icon">
-                    <!-- Дом -->
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
                     </svg>
                 </div>
-                <div>
-                    <div class="calc-card__title">Калькулятор стоимости дома</div>
-                    <div class="calc-card__desc">Рассчитайте примерную стоимость строительства каркасного дома или дома из бруса. Укажите этажность, площадь и комплектацию.</div>
-                    <span class="calc-card__btn">Рассчитать стоимость</span>
-                </div>
+                <div class="calc-card__title">Калькулятор стоимости брусового дома</div>
+                <div class="calc-card__desc">Рассчитайте примерную стоимость строительства дома из бруса. Укажите этажность, площадь и комплектацию — получите итоговую цену.</div>
+                <span class="calc-card__btn">Рассчитать стоимость</span>
             </a>
 
-            <!-- Фундамент -->
-            <a href="https://s-troya.com/kalkulyator/fundament/" class="calc-card">
+            <!-- Каркасный дом -->
+            <a href="https://s-troya.com/kalkulyator/karkasnyy/" class="calc-card">
                 <div class="calc-card__icon">
-                    <!-- Фундамент / слои -->
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 20h20v-2H2v2zm2-4h16v-2H4v2zm-2-4h20v-2H2v2zm4-4h12V6H6v2z"/>
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/>
                     </svg>
                 </div>
-                <div class="calc-card__title">Калькулятор фундамента</div>
-                <div class="calc-card__desc">Расчёт объёма бетона, количества арматуры и стоимости ленточного или свайного фундамента.</div>
-                <span class="calc-card__btn">Рассчитать</span>
-            </a>
-
-            <!-- Кровля -->
-            <a href="https://s-troya.com/kalkulyator/krovlya/" class="calc-card">
-                <div class="calc-card__icon">
-                    <!-- Кровля / треугольник -->
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 12h3v9h6v-5h2v5h6v-9h3L12 2z"/>
-                    </svg>
-                </div>
-                <div class="calc-card__title">Калькулятор кровли</div>
-                <div class="calc-card__desc">Расчёт площади кровли, количества и стоимости кровельных материалов под ваш тип крыши.</div>
-                <span class="calc-card__btn">Рассчитать</span>
-            </a>
-
-            <!-- Металлочерепица -->
-            <a href="https://s-troya.com/tseny-na-stroitelstvo-domov/metallocherepitsa/" class="calc-card">
-                <div class="calc-card__icon">
-                    <!-- Сетка / листы -->
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/>
-                    </svg>
-                </div>
-                <div class="calc-card__title">Металлочерепица</div>
-                <div class="calc-card__desc">Расчёт количества листов металлочерепицы и стоимости покрытия для вашей кровли.</div>
-                <span class="calc-card__btn">Рассчитать</span>
-            </a>
-
-            <!-- Мягкая кровля -->
-            <a href="https://s-troya.com/tseny-na-stroitelstvo-domov/myagkaya-krovlya/" class="calc-card">
-                <div class="calc-card__icon">
-                    <!-- Волны / мягкость -->
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 12c1.5 0 1.5-1 3-1s1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1v2c-1.5 0-1.5-1-3-1s-1.5 1-3 1-1.5-1-3-1-1.5 1-3 1-1.5-1-3-1-1.5 1-3 1v-2zm0-5c1.5 0 1.5-1 3-1s1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1v2c-1.5 0-1.5-1-3-1s-1.5 1-3 1-1.5-1-3-1-1.5 1-3 1-1.5-1-3-1-1.5 1-3 1V7zm0 10c1.5 0 1.5-1 3-1s1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1v2c-1.5 0-1.5-1-3-1s-1.5 1-3 1-1.5-1-3-1-1.5 1-3 1-1.5-1-3-1-1.5 1-3 1v-2z"/>
-                    </svg>
-                </div>
-                <div class="calc-card__title">Мягкая кровля</div>
-                <div class="calc-card__desc">Расчёт материала для гибкой черепицы — количество упаковок, ендовый ковёр и конёк.</div>
-                <span class="calc-card__btn">Рассчитать</span>
-            </a>
-
-            <!-- Утеплитель -->
-            <a href="https://s-troya.com/tseny-na-stroitelstvo-domov/uteplitel/" class="calc-card">
-                <div class="calc-card__icon">
-                    <!-- Снежинка / тепло -->
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22v-2z"/>
-                    </svg>
-                </div>
-                <div class="calc-card__title">Калькулятор утеплителя</div>
-                <div class="calc-card__desc">Расчёт необходимого количества утеплителя для стен, кровли и пола по площади и толщине слоя.</div>
-                <span class="calc-card__btn">Рассчитать</span>
-            </a>
-
-            <!-- Сайдинг -->
-            <a href="https://s-troya.com/tseny-na-stroitelstvo-domov/sajding/" class="calc-card">
-                <div class="calc-card__icon">
-                    <!-- Горизонтальные полосы -->
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 5h20v3H2V5zm0 5h20v3H2v-3zm0 5h20v3H2v-3z"/>
-                    </svg>
-                </div>
-                <div class="calc-card__title">Калькулятор сайдинга</div>
-                <div class="calc-card__desc">Подсчёт количества панелей сайдинга для фасада с учётом проёмов окон и дверей.</div>
-                <span class="calc-card__btn">Рассчитать</span>
-            </a>
-
-            <!-- Пиломатериалы -->
-            <a href="https://s-troya.com/tseny-na-stroitelstvo-domov/pilomaterialy/" class="calc-card">
-                <div class="calc-card__icon">
-                    <!-- Брус / дерево -->
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17 8C8 10 5.9 16.17 3.82 20H5.71c.24-.64.49-1.29.78-1.93C8.17 15.57 10.75 13.88 17 13v3l4-4-4-4v2z"/>
-                    </svg>
-                </div>
-                <div class="calc-card__title">Калькулятор пиломатериалов</div>
-                <div class="calc-card__desc">Расчёт объёма пиломатериалов (доска, брус, рейка) и их стоимости для строительных работ.</div>
-                <span class="calc-card__btn">Рассчитать</span>
-            </a>
-
-            <!-- Отделка -->
-            <a href="https://s-troya.com/tseny-na-stroitelstvo-domov/otdelka/" class="calc-card">
-                <div class="calc-card__icon">
-                    <!-- Кисть / отделка -->
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34c-.39-.39-1.02-.39-1.41 0L9 12.25 11.75 15l9.96-9.96c.39-.39.39-1.02 0-1.41z"/>
-                    </svg>
-                </div>
-                <div class="calc-card__title">Калькулятор отделки</div>
-                <div class="calc-card__desc">Расчёт стоимости внутренней и наружной отделки дома — полы, стены, потолки, фасад.</div>
-                <span class="calc-card__btn">Рассчитать</span>
-            </a>
-
-            <!-- Ипотека -->
-            <a href="https://s-troya.com/ipoteka-na-stroitelstvo-zagorodnego-doma/" class="calc-card">
-                <div class="calc-card__icon">
-                    <!-- Деньги / процент -->
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
-                    </svg>
-                </div>
-                <div class="calc-card__title">Калькулятор ипотеки</div>
-                <div class="calc-card__desc">Рассчитайте ежемесячный платёж по ипотеке на строительство дома от 6% годовых.</div>
-                <span class="calc-card__btn">Рассчитать</span>
+                <div class="calc-card__title">Калькулятор каркасных домов</div>
+                <div class="calc-card__desc">Рассчитайте стоимость каркасного дома под ключ. Выберите этажность, площадь и тип комплектации по технологии ТПК-250.</div>
+                <span class="calc-card__btn">Рассчитать стоимость</span>
             </a>
 
         </div>
